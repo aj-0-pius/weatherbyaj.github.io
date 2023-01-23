@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-
     <style>
         nav {
-            background-color: green;
+            background-color: rgb(56, 235, 40);
         }
 
-        h1{
+        h1 {
             color: black;
             text-align: center;
         }
+
         p {
             font-family: verdana;
             font-size: 20px;
@@ -20,30 +19,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather App</title>
+    <link rel="shortcut icon" type="image" href="images\pius.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 
-        <style>
-            body {
-                background-color: Silver;
-            }
-    
-            h1{
-                color: black;
-                text-align: center;
-            }
-            p {
-                font-family: verdana;
-                font-size: 20px;
-            }
-        </style>
+    <style>
+        body {
+            background-color: Silver;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 20px;
+        }
+    </style>
 </head>
-
 <body>
-
-
-
     <nav class="navbar navbar-expand-lg bg-body-warning-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://aj-0-pius.github.io/weatherbyaj.github.io/">Weather By Aj</a>
@@ -55,14 +59,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://aj-0-pius.github.io/weatherbyaj.github.io/">Home</a>
+                        <a class="nav-link active" aria-current="page"
+                            href="https://aj-0-pius.github.io/weatherbyaj.github.io/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/aj-0-pius/weatherbyaj.github.io">Abuth App</a>
                     </li>
                     <li class="nav-item dropdown">
 
-                        
+
 
 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -70,7 +75,8 @@
                             Also can see
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://aj-0-pius.github.io/weatherbyaj.github.io/">Pabna</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://aj-0-pius.github.io/weatherbyaj.github.io/">Pabna</a></li>
                             <li><a class="dropdown-item" href="#">Rajshahi</a></li>
                             <li><a class="dropdown-item" href="#">Sylhet</a></li>
                             <li><a class="dropdown-item" href="#">Mymensingh</a></li>
@@ -84,247 +90,243 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input id="city" class="form-control me-2" type="search" placeholder="Find Your City" aria-label="Search">
+                    <input id="city" class="form-control me-2" type="search" placeholder="Find Your City"
+                        aria-label="Search">
                     <button class=" btn-outline-success" type="submit" id="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <main>
-            <h1 class="my-4 text-center">Weather For <span id="cityName"></span></h1>
-            <ul class="list-unstyled mt-1 mb-1">
-                <li class="my-1 text-center"><a class="text-warning bg-dark" href="https://github.com/aj-0-pius" >Designed By aj_0_pius</a></li>
-            </ul>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-
-
-                            <h4 class="my-0 fw-normal"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
-                                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-                                </svg>
-                              <span>Temperature</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
-                              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-                              </svg> <i class="bi bi-wind"></i></span>
-                            </h4>
-
-
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">Weather For <span id="cityName"></span></h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-temperature-high"></i>
+                        <div class="text"><span id="temp2"></span><span>&#8451;</span></small>
                         </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"><span id="temp2"></span><span>&#8451;</span></small>
-                            </h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Temperature is <span id="temp"></span><span>&#8451;</span></li>
-                                <li>Min Temperature is <span id="min_temp"></span><span>&#8451;</span></li>
-                                <li>Max Temperature is <span id="max_temp"></span><span>&#8451;</span></li>
-                                
-                            </ul>
-                            <a type="button" class="w-100 btn btn-lg btn-outline-primary" href="https://www.facebook.com/profile.php?id=100029774123210" >aj_0_pius</a>
-                        </div>
+                        <p>
+                        <div>Temperature is <span id="temp"></span><span>&#8451;</span></div>
+                        <div>Min Temperature is <span id="min_temp"></span><span>&#8451;</span></div>
+                        <div>Max Temperature is <span id="max_temp"></span><span>&#8451;</span></div>
+                        </p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-
-
-                        
-                            <h4 class="my-0 fw-normal"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wind" viewBox="0 0 20 ">
-                                <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
-                              </svg>
-                              Humidity Info 
-
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
-                                <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
-                              </svg>
-                              
-                            </h4>
-
-
-                            
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small>%</small>
-                            </h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Wind Degrees is <span id="wind_degrees"></span>km/h</li>
-                                <li>Feels Like is <span id="feels_like"></span></li>
-                                <li>Humidity is <span id="humidity"></span>%</li>
-                                
-                            </ul>
-                            <a type="button" class="w-100 btn btn-lg btn-outline-primary" href="https://github.com/aj-0-pius" >aj_0_pius</a>
-                        </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-cloud-meatball"></i>
+                        <div class="text"><span id="humidity2"></span><small>%</small></div>
+                        <p>
+                        <div>Humidity is <span id="humidity"></span>%</div>
+                        <div>Sunrise Time is <span id="sunrise"></span></div>
+                        <div>Sunset Time is <span id="sunset"></span></div>
+                        </p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
-                                    <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
-                                  </svg>                                  
-
-                                Wind Info
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
-                                    <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
-                                  </svg>
-                                  
-                            </h4>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-wind"></i>
+                        <div class="text"><span id="wind_speed2"></span><small>km/h</small>
                         </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small>km/h</small>
-                            </h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Wind Speed is <span id="wind_speed"></span>km/h</li>
-                                <li>Sunrise Time is <span id="sunrise"></span></li>
-                                <li>Sunset Time is <span id="sunset"></span></li>
-                                
-                            </ul>
-                            <a type="button" class="w-100 btn btn-lg btn-outline-primary" href="https://www.instagram.com/aj_0_pius/" >aj_0_pius</a>
-                        </div>
+                        <p>
+                        <div>Wind Speed is <span id="wind_speed"></span>km/h</div>
+                        <div>Wind Degrees is <span id="wind_degrees"></span>km/h</div>
+                        <div>Feels Like is <span id="feels_like"></span></div>
+                        </p>
                     </div>
                 </div>
             </div>
-            <h2 class="display-6 text-center mb-4">In All Division Weather</h2>
+        </div>
+    </section>
+
+    <!-- skills section start -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Other Citys Weather</h2>
             <div class="table-responsive">
                 <table class="table text-center">
                     <thead>
                         <tr>
                             <th style="width: 34%;"></th>
-                            <th style="width: 22%;"> Cloud_pct </th>
-                            <th style="width: 22%;"> Feels_like </th>
+                            <th style="width: 22%;"> Temperature </th>
                             <th style="width: 22%;"> Humidity </th>
-                            <th style="width: 22%;"> Max_temp </th>
-                            <th style="width: 22%;"> Min_temp </th>
-                            <th style="width: 22%;"> Sunrise </th>
-                            <th style="width: 22%;"> Sunset </th>
-                            <th style="width: 22%;"> Temp </th>
                             <th style="width: 22%;"> Wind_speed </th>
                             <th style="width: 22%;"> Wind_degrees </th>
+                            <th style="width: 22%;"> Max_temp </th>
+                            <th style="width: 22%;"> Min_temp </th>
+                            <th style="width: 22%;"> Cloud_pct </th>
+                            <th style="width: 22%;"> Sunrise </th>
+                            <th style="width: 22%;"> Sunset </th>
+                            <th style="width: 22%;"> Feels_like </th>
 
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <th scope="row" class="text-start">Dhaka</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                            <td><span id="tempdhaka">%</span></td>
+                            <td><span id="humiditydhaka"></span></td>
+                            <td><span id="wind_speeddhaka"></span></td>
+                            <td><span id="wind_degreesdhaka"></span></td>
+                            <td><span id="max_tempdhaka"></span></td>
+                            <td><span id="min_tempdhaka"></span></td>
+                            <td><span id="cloud_pctdhaka"></span></td>
+                            <td><span id="sunrisedhaka"></span></td>
+                            <td><span id="sunsetdhaka"></span></td>
+                            <td><span id="feels_likedhaka"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Rajshahi</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                            <td><span id="temprajshahi">%</span></td>
+                            <td><span id="humidityrajshahi"></span></td>
+                            <td><span id="wind_speedrajshahi"></span></td>
+                            <td><span id="wind_degreesrajshahi"></span></td>
+                            <td><span id="max_temprajshahi"></span></td>
+                            <td><span id="min_temprajshahi"></span></td>
+                            <td><span id="cloud_pctrajshahi"></span></td>
+                            <td><span id="sunriserajshahi"></span></td>
+                            <td><span id="sunsetrajshahi"></span></td>
+                            <td><span id="feels_likerajshahi"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Chittagong</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                            <td><span id="tempchittagong">%</span></td>
+                            <td><span id="humiditychittagong"></span></td>
+                            <td><span id="wind_speedchittagong"></span></td>
+                            <td><span id="wind_degreeschittagong"></span></td>
+                            <td><span id="max_tempchittagong"></span></td>
+                            <td><span id="min_tempchittagong"></span></td>
+                            <td><span id="cloud_pctchittagong"></span></td>
+                            <td><span id="sunrisechittagong"></span></td>
+                            <td><span id="sunsetchittagong"></span></td>
+                            <td><span id="feels_likechittagong"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Barisal</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+
+                            <td><span id="tempBarisal">%</span></td>
+                            <td><span id="humidityBarisal"></span></td>
+                            <td><span id="wind_speedBarisal"></span></td>
+                            <td><span id="wind_degreesBarisal"></span></td>
+                            <td><span id="max_tempBarisal"></span></td>
+                            <td><span id="min_tempBarisal"></span></td>
+                            <td><span id="cloud_pctBarisal"></span></td>
+                            <td><span id="sunriseBarisal"></span></td>
+                            <td><span id="sunsetBarisal"></span></td>
+                            <td><span id="feels_likeBarisal"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Khulna</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Mymensingh</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+
+                            <td><span id="tempkhulna">%</span></td>
+                            <td><span id="humiditykhulna"></span></td>
+                            <td><span id="wind_speedkhulna"></span></td>
+                            <td><span id="wind_degreeskhulna"></span></td>
+                            <td><span id="max_tempkhulna"></span></td>
+                            <td><span id="min_tempkhulna"></span></td>
+                            <td><span id="cloud_pctkhulna"></span></td>
+                            <td><span id="sunrisekhulna"></span></td>
+                            <td><span id="sunsetkhulna"></span></td>
+                            <td><span id="feels_likekhulna"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Rangpur</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+
+                            <td><span id="temprangpur">%</span></td>
+                            <td><span id="humidityrangpur"></span></td>
+                            <td><span id="wind_speedrangpur"></span></td>
+                            <td><span id="wind_degreesrangpur"></span></td>
+                            <td><span id="max_temprangpur"></span></td>
+                            <td><span id="min_temprangpur"></span></td>
+                            <td><span id="cloud_pctrangpur"></span></td>
+                            <td><span id="sunriserangpur"></span></td>
+                            <td><span id="sunsetrangpur"></span></td>
+                            <td><span id="feels_likerangpur"></span></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start">Sylhet</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+
+                            <td><span id="tempsylhet">%</span></td>
+                            <td><span id="humiditysylhet"></span></td>
+                            <td><span id="wind_speedsylhet"></span></td>
+                            <td><span id="wind_degreessylhet"></span></td>
+                            <td><span id="max_tempsylhet"></span></td>
+                            <td><span id="min_tempsylhet"></span></td>
+                            <td><span id="cloud_pctsylhet"></span></td>
+                            <td><span id="sunrisesylhet"></span></td>
+                            <td><span id="sunsetsylhet"></span></td>
+                            <td><span id="feels_likesylhet"></span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </main>
+        </div>
+    </section>
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>If need help you can knock me on my Facebook, Instagram, Twitter and also in GitHub account.
+                    <div>Thank You.</div>
+                    </p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Name</div>
+                                <div class="sub-title">Minhajul Abadin Pius</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Address</div>
+                                <div class="sub-title">Pabna, Bangladesh</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">ajpius1234@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <div class="row">
+                        <i class="fab fa-facebook-f"> <a class="text"
+                            href="https://www.facebook.com/profile.php?id=100029774123210">Minhajul Abadin
+                            Pius</a></i>
+                    </div>
+                    <div class="row">
+                        <i class="fab fa-instagram"> <a class="text" href="https://www.instagram.com/aj_0_pius">aj_0_pius</a></i>
+                    </div>
+                    <div class="row">
+                        <i class="fab fa-twitter"> <a class="text" href="https://twitter.com/aj_0_pius">aj_0_pius</a></i>
+                    </div>
+                    <div class="row">
+                        <i class="fab fa-github"> <a class="text" href="https://github.com/aj-0-pius">aj-0-pius</a></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://www.facebook.com/profile.php?id=100029774123210"><i
+                    class="fab fa-facebook-f"></i> Minhajul Abadin Pius</a> | <span class="far fa-copyright"></span>
+            2023 All rights reserved.</span>
+    </footer>
     <script src="script.js"></script>
-
 </body>
 
 </html>
